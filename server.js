@@ -7,7 +7,7 @@ import fetch from 'node-fetch'
 function connect(conn, PORT) {
     let app = global.app = express()
 
-    // app.use(express.static(path.join(__dirname, 'views')))
+    app.use(express.static(path.join(__dirname, 'views')))
     let _qr = 'invalid'
 
     conn.ev.on('connection.update', function appQR({ qr }) {
